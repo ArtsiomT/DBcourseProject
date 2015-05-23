@@ -114,9 +114,11 @@
 	if($result2 == 'TRUE')
 	{
 		echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
+		exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
 	}
 	else {
 		echo "Ошибка! Вы не зарегистрированы.";
+		exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
 	}
 ?>
 </body>

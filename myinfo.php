@@ -12,27 +12,27 @@ $tprow = mysql_fetch_array($tpresult);
 	<tr>
 		<td>Ваше имя:</td>
 		<td><?php echo $row['firstname'] ?></td>
-		<td></td>	
+		<td><a href="#changename" class="openModal">Изменить</a> </td>	
 	<tr>
 	<tr>
 		<td>Фамилия</td>
 		<td><?php echo $row['lastname'] ?></td>
-		<td></td>	
+		<td><a href="#changelast" class="openModal">Изменить</a> </td>	
 	<tr>
 	<tr>
 		<td>Город</td>
 		<td><?php echo $row['city'] ?></td>
-		<td></td>	
+		<td><a href="#changecity" class="openModal">Изменить</a> </td>	
 	<tr>
 	<tr>
 		<td>Адрес</td>
 		<td><?php echo $row['address'] ?></td>
-		<td></td>	
+		<td><a href="#changeaddress" class="openModal">Изменить</a> </td>	
 	<tr>
 	<tr>
 		<td>Номер телефона</td>
 		<td><?php echo $row['phone'] ?></td>
-		<td></td>	
+		<td><a href="#changephone" class="openModal">Изменить</a> </td>	
 	<tr>
 </table>
 
@@ -40,7 +40,7 @@ $tprow = mysql_fetch_array($tpresult);
 	<tr>
 		<td>Тарифный план:</td>
 		<td><?php echo $tprow['name'] ?></td>
-		<td></td>	
+		<td><a href="#changetp" class="openModal">Изменить</a> </td>	
 	<tr>
 	<tr>
 		<td>Абонентская плата</td>
@@ -57,6 +57,7 @@ $tprow = mysql_fetch_array($tpresult);
 		<td><?php echo $tprow['speed']." Мбит/с" ?></td>
 		<td></td>	
 	<tr>
+
 
 	<?php if (!empty($tprow['rubmb'])){
 			include ("rubmb.php");

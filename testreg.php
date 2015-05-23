@@ -49,6 +49,7 @@
 			$_SESSION['login'] = $myrow['login'];
 			$_SESSION['id'] = $myrow['id']; 
 			echo "Вы успешно вошли на сайт! <a href='index.php'>Главная страница</a>";
+			exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
 		}
 		else {
 			exit("Неверный пароль.");
