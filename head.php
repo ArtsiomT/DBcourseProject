@@ -1,0 +1,1 @@
+<center><div class="header"><a href = "index.php">БАНАН-ТЕЛЕКОМ</a></div></center>

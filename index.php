@@ -11,17 +11,19 @@
 	<title>Internet Provider</title>
 </head>
 <body>
-<h2>Главная страница </h2>
+<?php include ("head.php");?>
 
 <br>
 <?php 
 	if (empty($_SESSION['login']) or empty($_SESSION['id']))
 	{
 		include ('loginform.php');
-		echo "Вы вошли на сайт, как гость. Пожалуйста, войдите под своим пользователям или зарегистрируйтесь";
+		echo "<center>Вы вошли на сайт, как гость. Пожалуйста, войдите под своим пользователям или зарегистрируйтесь</center>";
 	} else 
 	{
-		echo "Вы вошли на сайт, как <font color=red>".$_SESSION['login']."</font>(<a href='exit.php'>выход</a>)<br><a href = 'user_cabinet.php'>Эта ссылка доступна только зарегистрированым пользователям</a>";
+		echo"<center>";
+		include ("myinfo.php");
+		echo "</center>";
 	}
 ?>
 </body>

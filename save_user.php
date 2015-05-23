@@ -63,7 +63,6 @@
 
 	if (isset($_POST['tariff'])){
 		$tariff = trim($_POST['tariff']);
-
 	}
 
 
@@ -102,22 +101,15 @@
 	$phone = trim($phone);
 
 	include ("db.php");
-	$tpresult = mysql_query("SELECT 'tp_id' FROM tariffs WHERE name = 'tariff'", $db);
+	$tpresult = mysql_query("SELECT tp_id FROM tariffs WHERE name = '$tariff'", $db);
 	$tprow = mysql_fetch_array($tpresult);
-	if (empty($tprow))
-	{
-		exit("Ничего не вернулось");
-	} else 
-	{
-		$tp_id = $tprow['tp_id'];
-		echo "".$tp_id;
-	}
+	$tp_id = $tprow['tp_id'];
 	$result = mysql_query("SELECT id FROM users WHERE login = 'login'", $db);
 	$myrow = mysql_fetch_array($result);
 	if (!empty($myrow['id'])) {
 		exit("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 	}
-	$result2 = mysql_query("INSERT INTO users (login, password, firstname, lastname, city, address, phone) VALUES('$login', '$password', '$firstname', '$lastname', '$city', '$address', '$phone')");
+	$result2 = mysql_query("INSERT INTO users (login, password, firstname, lastname, city, address, phone, tp_id) VALUES('$login', '$password', '$firstname', '$lastname', '$city', '$address', '$phone', '$tp_id')");
 
 	if($result2 == 'TRUE')
 	{

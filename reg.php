@@ -6,6 +6,7 @@
 		<title>Регистрация</title>
 	</head>
 	<body>
+        <?php include ("head.php") ?>
 		<form action="save_user.php" method="post" class="form-registration">
 		<table>
     <tr>
